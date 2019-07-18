@@ -1,0 +1,68 @@
+<!-- pages/mine/mine.wxml -->
+<import src="../template/head.wxml"></import>
+<view>
+    <block bindtap="clickTemp">
+        <template is="head" data="{{title}}"></template>
+    </block>
+    <view class="my-time" bindtap="goDate">
+        {{y}}年{{m}}月
+        <view class="right-text">查看其他月</view>
+    </view>
+    <block wx:if="{{showDate}}">
+    <date year="{{y}}" month="{{m}}"  bind:submit="submit" bind:close="close"></date>
+    </block>
+    <view class="main-first">
+        <view class="grad after">
+            <view class="number">{{total_times}}</view>
+            <view class="text">总课时</view>
+        </view>
+        <view class="grad after">
+            <view class="number">{{time_count}}</view>
+            <view class="text">已上课时</view>
+        </view>
+        <view class="grad" bindtap="arrearsList">
+            <view class="number">
+                {{arrears.length}}
+                <i class="reddot reddot1">{{arrears_count}}</i>
+            </view>
+            <view class="text">欠费人数</view>
+        </view>
+    </view>
+    <view class="main-second">
+        <view class="grad1">
+            <navigator url="/pages/myrecord/myrecord">
+                <image src="../../images/class1.png" class="grad1-img" />
+                <view>上课记录</view>
+            </navigator>
+        </view>
+        <!-- <view class="grad1">
+            <navigator url="/pages/record/record?flag=0&title=代课记录">
+                <image src="../../images/class2.png" class="grad1-img" />
+                <view>代课记录</view>
+            </navigator>
+        </view>
+        <view class="grad1">
+            <navigator url="/pages/record/record?flag=1&title=合班记录">
+                <image src="../../images/class3.png" class="grad1-img" />
+                <view>合班记录</view>
+            </navigator>
+        </view> -->
+        <view class="grad1">
+            <navigator url="/pages/record/record?flag=2&title=请假通知">
+                <image src="../../images/class4.png" class="grad1-img" />
+                <i wx:if="{{leaveask.length}}" class="reddot reddot2">{{leaveask.length}}</i>
+                <view>请假通知</view>
+            </navigator>
+        </view>
+        <!-- <view class="grad1">
+              <navigator url="/pages/studentpayment/studentpayment?flag=1&title=学员缴费">
+            <image src="../../images/class5.png" class="grad1-img" />
+            <view>学员缴费</view>
+            </navigator>
+        </view> -->
+        <view class="grad1" bindtap="goTruant">
+                <image src="../../images/class1.png" class="grad1-img" />
+                <view>学员删除</view>
+        </view>
+    </view>
+</view>

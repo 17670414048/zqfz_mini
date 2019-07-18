@@ -1,0 +1,64 @@
+/* pages/success/success.wxss */
+
+/* pages/mycourse/mycourse.wxss */
+
+page {
+    background: #F9F9FA;
+}
+
+
+.info {
+    background: #fff;
+    padding: 30rpx 40rpx;
+    margin-bottom: 100rpx;
+}
+
+.info-course {
+    height: 64rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(74, 74, 74, 1);
+    line-height: 64rpx;
+}
+
+.info-time {
+    height: 34rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(150, 150, 150, 1);
+    line-height: 34rpx;
+}
+
+.info-teacher {
+    height: 44rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(150, 150, 150, 1);
+    line-height: 44rpx;
+    margin-top: 16rpx;
+}
+
+.btns {
+    padding: 100rpx 122rpx 20rpx;
+}
+
+.btn {
+    height: 88rpx;
+    border-radius: 50rpx;
+    margin: 40rpx auto;
+    font-size:32rpx;
+}
+
+.btn-back {
+    background: linear-gradient(316deg, rgba(241, 195, 66, 1) 0%, rgba(255, 227, 94, 1) 100%);
+    box-shadow: 0rpx 16rpx 28rpx 0rpx rgba(191, 159, 35, 0.15);
+    color: #fff;
+}
+
+.btn-cancel {
+    background: rgba(255, 255, 255, 1);
+    color: #000;
+}

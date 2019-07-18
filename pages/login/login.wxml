@@ -1,0 +1,14 @@
+<view class="container" wx:if="{{inited && !user_id}}">
+    <view class="login-title" aria-role="登录">手机号登录</view>
+    <text class="login-text">网页端注册，小程序直接绑定</text>
+    <form bindsubmit="formSubmit">
+        <view class="form-input">
+            <input type="text" name="number" class="login-input" bindinput="setPhone" placeholder="请输入手机号" value="{{number}}" placeholder-class="placestyle" />
+            <view class="checkout">
+                <input type="text" name="psw" class="login-pwd" placeholder="请输入验证码" bindinput="setCode" value="{{code}}" placeholder-class="placestyle" />
+                <view bindtap='sendCode'>获取验证码</view>
+            </view>
+        </view>
+        <button form-type="submit" class="submit">确定登录</button>
+    </form>
+</view>

@@ -1,0 +1,56 @@
+<!-- pages/studentpayment/studentpayment.wxml -->
+<import src="../template/head.wxml"></import>
+<view class="wraper">
+    <block wx:if="{{flag==1}}" bindtap="clickTemp">
+        <template is="head" data="{{title}}"></template>
+    </block>
+    <block wx:else bindtap="clickTemp">
+        <template is="head" data="{{title,notice}}"></template>
+    </block>
+    <view class="main">
+        <scroll-view class='main-scroll' scroll-y style="height: 100%">
+            <block wx:if="{{list.length == 0}}">
+                <view class="main-list no-info"><text>暂无数据。。。。</text></view>
+            </block>
+            <block wx:if="{{flag==1}}">
+                <view class='main-list'>
+                    <view class="lists" wx:for="{{list}}" wx:key="{{index}}">
+                        <!-- <block wx:for="{{itemList}}" wx:key="id"> -->
+                        <view class='item_container' bindtap='itemSelected' data-id='{{item.id}}' data-index='{{index}}'>
+                            <image class='select_icon' src="{{item.checked?'../../images/selected.png':'../../images/select1.png'}}"></image>
+                            <text class='text'>{{item.registid}} {{item.name}}</text>
+                            <view class="select-index">欠课{{item.time * -1}}节</view>
+                        </view>
+                        <!-- </block>
+                    {{item}} -->
+                    </view>
+                </view>
+            </block>
+            <block wx:if="{{flag==2}}">
+                <view class='main-list'>
+                    <view class="lists" wx:for="{{list}}" wx:key="{{index}}">
+                        <!-- <block wx:for="{{itemList}}" wx:key="id"> -->
+                        <view class='item_container' bindtap='deleteSelected' data-babyid='{{item.baby_id}}' data-scheduleid='{{item.schedule_id}}' data-index='{{index}}'>
+                            <image class='select_icon' src="{{item.checked?'../../images/selected.png':'../../images/select1.png'}}"></image>
+                            <text class='text'>
+                                {{item.registid}} {{item.baby_name}} {{item.course_name}}
+                            </text>
+                        </view>
+                        <!-- </block>
+                    {{item}} -->
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+    <block wx:if="{{flag==1}}">
+        <view class="btn {{isBottom?'active':''}}" bindtap="sendNotice">
+            已选{{selectList.length}}人 去提醒
+        </view>
+    </block>
+    <block wx:if="{{flag==2}}">
+        <view class="btn {{isBottom?'active':''}}" bindtap='deleteBaby'>
+            已选{{selectList.length}}人 去删除
+        </view>
+    </block>
+</view>

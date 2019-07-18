@@ -1,0 +1,49 @@
+<!-- pages/mycoursecallname/mycoursecallname.wxml -->
+    <import src='../template/head.wxml'></import>
+<wxs src="../../utils/formateDate.wxs" module="tutil" />
+<view class="wraper">
+    <block bindtap="clickTemp">
+        <template is="head" data="{{title}}"></template>
+    </block>
+    <view class="mtop">
+        <view class="info">
+            <view class="info-course">
+                {{target.course_name}}
+                <text class="i">（共{{list.length}}人）</text>
+            </view>
+            <view class="info-time">{{tutil.formatDayTime(target.start_time*1000, '.')}}-{{tutil.formatTime(target.end_time*1000)}}</view>
+            <view class="three">
+                <i class="three-i one">请假{{leave_count}}人</i>
+                <i class="three-i two">签到{{sign_count}}人</i>
+                <i class="three-i thr">旷课{{truant_count}}人</i>
+            </view>
+        </view>
+    </view>
+    <view class="mcenter">
+        <scroll-view class='main-scroll' scroll-y style="height: 100%">
+            <view class='main-list' wx:if="{{list.length}}">
+                <view class="lists" wx:for="{{list}}" wx:key="{{index}}">
+                    <!-- <block wx:for="{{itemList}}" wx:key="id"> -->
+                    <view class='item_container' bindtap='itemSelected' data-id='{{item.baby_id}}' data-index='{{index}}'>
+                        <image class='select_icon' src="{{item.checked?'../../images/selected.png':'../../images/select1.png'}}"></image>
+                        <view class='text over'>
+                          <i>{{item.name}} {{item.time}}课时 </i>
+                          <i class="gray_text" wx:if="{{item.wxusers.length}}">已绑定:{{item.wxusers[0].nick_name}}</i>
+                          <i class="gray_text" wx:else>未绑定</i>
+                        </view>
+                        <view class="select-index2" wx:if="{{item.call.kind==2}}">请假</view>
+                        <view class="select-index1" wx:elif="{{item.call.kind==1}}">签到</view>
+                        <view class="select-index3" wx:elif="{{item.call.kind==3}}">旷课</view>
+                    </view>
+                    <!-- </block>
+                    {{item}} -->
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="mfooter {{isBottom?'yellow':'gray'}}">
+        <view class="f" bindtap="sign" data-isBottom="{{isBottom}}">签到</view>
+        <view class="f" bindtap="truant" data-isBottom="{{isBottom}}">旷课</view>
+        <view class="f" bindtap="leave" data-isBottom="{{isBottom}}">请假</view>
+    </view>
+</view>

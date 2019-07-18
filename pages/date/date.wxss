@@ -1,0 +1,63 @@
+/* pages/date/date.wxss */
+
+ .mypicker {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100
+}
+
+.shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    opacity: 0.5
+}
+
+.time-title {
+    float: left;
+    width: 20%;
+    text-align: center;
+    color: #fff;
+}
+
+.picker-text {
+    text-align: center;
+    color: #000;
+}
+
+.picker-text view{
+    line-height: 40px;font-size:28rpx;
+}
+
+
+
+.time_screens {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 160rpx;
+
+    overflow: hidden;
+    background: linear-gradient(316deg, rgba(241, 195, 66, 1) 0%, rgba(255, 227, 94, 1) 100%);
+}
+.picker{
+    width: 100%; height: 200px;
+    background: linear-gradient(316deg, rgba(241, 195, 66, 1) 0%, rgba(255, 227, 94, 1) 100%);
+}
+ .mask{
+    /* background:rgba(255, 227, 94, 1); */
+    opacity:0.4;
+}
+.indicator{
+    height: 40px;
+    line-height: 40px;
+    border-top:2rpx solid #FFE89E;
+    border-bottom:2rpx solid #FFE89E;
+    box-sizing: content-box;
+}  

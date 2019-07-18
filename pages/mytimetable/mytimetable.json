@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "calendar": "../../pages/calendar/calendar",
+    "switchItem": "/components/switchItem/switchItem",
+    "calendarswiper": "../../components/calendarswiper/index"
+  }
+}

@@ -1,0 +1,75 @@
+<!-- pages/graderecord/graderecord.wxml -->
+<import src="../template/head.wxml"></import>
+<wxs src="../../utils/formateDate.wxs" module="tutil" />
+<view class="wraper">
+  <block bindtap="clickTemp">
+    <template is="head" data="{{title}}"></template>
+  </block>
+  <view class="main">
+    <scroll-view class='main-scroll' scroll-y style="height: 100%">
+      <view wx:if="{{list.length == 0}}" class="no-info" style='margin-top:20rpx;'>
+        <text>暂无数据。。。。</text>
+      </view>
+      <block wx:if="{{flag==0}}">
+        <view class="record-list">
+          <view class="teacher">
+            <text class="flag">申请老师</text>
+            <text class="flag-text">宋老师</text>
+          </view>
+          <view class="teacher">
+            <text class="flag">代课课程</text>
+            <text class="flag-text">体能训练课程</text>
+          </view>
+          <view class="teacher">
+            <text class="flag">代课时间</text>
+            <text class="flag-text">2019-03-27（周三）08:00 - 09:00</text>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{flag==1}}">
+        <view class="list">
+          <view class="grade">
+            <text class="flag">申请老师</text>
+            <text class="flag-text">宋老师</text>
+          </view>
+          <view class="grade">
+            <text class="flag">合班课程</text>
+            <text class="flag-text">体能训练课程</text>
+          </view>
+          <view class="grade">
+            <text class="flag">合班时间</text>
+            <text class="flag-text">2019-03-27（周三）08:00 - 09:00</text>
+          </view>
+          <view class="grade">
+            <text class="flag">合班人数</text>
+            <text class="flag-text">2人</text>
+          </view>
+          <view class="grade">
+            <text class="flag" decode="{{true}}">总人数 &nbsp;&nbsp;</text>
+            <text class="flag-text">12人</text>
+          </view>
+          <view class="grade-btn">
+            <view class="btn">拒绝</view>
+            <view class="btn y">同意</view>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{flag==2}}">
+        <view class="list" wx:for="{{list}}" wx:for-index="index" wx:key="{{item.id}}" data-id="{{item.id}}" data-index="{{index}}">
+          <view class="leave-flag {{item.type?'red-cicrle':'blue-cicrle'}}">{{item.type_desc}} {{item.baby_name}}</view>
+          <view class="leave">
+            <text class="flag-text">{{tutil.formatDayTime(item.start_time * 1000)}}7（周{{item.week_desc}}）  {{tutil.formatTime(item.start_time*1000)}}  {{item.course_name}}</text>
+          </view>
+          <view class="leave-time">
+            <text>申请时间  {{tutil.formatDay(item.create_time*1000, '年', '月', '日')}}  {{tutil.formatTime(item.create_time*1000)}}</text>
+          </view>
+
+          <view class="grade-btn">
+            <view class="btn" bindtap='refuse' data-index="{{index}}" data-id="{{item.id}}">拒绝</view>
+            <view class="btn y" bindtap='allow' data-index="{{index}}" data-id="{{item.id}}">同意</view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

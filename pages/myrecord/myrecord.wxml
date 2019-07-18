@@ -1,0 +1,64 @@
+<import src="../template/head.wxml">
+</import>
+<wsx src="../../utils/formateDate.wxs" module="tutil" />
+<view class="wraper">
+  <!-- <block bindtap="clickTemp"> -->
+  <template is="head" data="{{title}}"></template>
+  <view class="calendar-wrap {{ifCalendarswiper===1?'calendarswiper':''}}">
+    <calendarswiper calendar="{{calendar}}" gesture="{{gesture}}" id="calendarswiper" class="" bindifCalendarswiper="ifCalendarswiper"></calendarswiper>
+  </view>
+  <image class="icon" bindtap='switchMonthView' src='../../images/more.png'></image>
+  <!-- <block wx:if="{{isTime}}">
+        <view class='header'>
+            <view class="header-f">
+                <view class="time-left" catch:tap="change">
+                    <text class="header-time">{{times}}</text>
+                    <icon class="icon {{isTime?'icon-down':'icon-up'}}"></icon>
+                </view>
+            </view>
+            <view class="header-s">
+                <swiper class="swiper" duration="{{duration}}" current="{{currentItemId}}" current-item-id="{{currentItemId}}" bindchange="swiperChange">
+                    <block wx:for="{{list}}" wx:key="index">
+                        <swiper-item class="item" item-id="{{index}}" data-item-id="{{index}}" bindtap='clickChange'>
+                            <view class='li'>
+                                <view class='li1 scroll-list {{currentItemId == index ? "active" : ""}}'>
+                                    <text class="scroll-list-week">{{item.eg}}</text>
+                                    <view class="scroll-list-day">{{item.day}}</view>
+                                </view>
+                            </view>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+        </view>
+    </block> -->
+  <!-- <block wx:if="{{!isTime}}">
+        <calendar dateTime="{{calenderTime}}" showCaldenlar="{{!isTime}}" bind:changes="changes"></calendar>
+    </block> -->
+  <view class="info">
+    <view class="left">当日总课时：{{total_time}}课时</view>
+    <view class="right">上课总人数：{{total_sign}}人</view>
+  </view>
+  <view class='main'>
+    <scroll-view class='main-scroll' scroll-y style="height: 100%">
+      <view class='main-list'>
+        <view class="times" wx:for="{{timeList}}" wx:key="{{index}}">
+          <view class="times-left">{{item}}</view>
+          <view class="times-right">
+            <view wx:if="{{courseList[index].length}}" class="card color-border-bottom{{index%4}} {{selected===index?'card-active'+index%4:''}}" wx:for="{{timeList}}" wx:key="{{index}}" style="top:{{index*200}}rpx;" data-index="{{index}}" bindtap="select">
+              <view class='card-box'>
+                <view class='card-content time color{{index%4}}'>
+                  {{courseList[index][0].time_desc}}
+                  <i wx:if="{{courseList[index][0].status_desc}}">{{courseList[index][0].status_desc}}</i>
+                </view>
+                <view class='card-content course'>{{courseList[index][0].course_name}}</view>
+                <view class='card-content info'>共{{courseList[index][0].total_baby}}人（已请假{{courseList[index][0].leave_count}}人）</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </scroll-view>
+  </view>
+</view>

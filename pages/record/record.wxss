@@ -1,0 +1,154 @@
+/* pages/graderecord/graderecord.wxss */
+.wraper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .main{
+      flex: 1;
+      position: relative;
+  }
+  .main-scroll {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  .list{
+
+    background:rgba(255,255,255,1);
+    box-shadow:0rpx 4rpx 16rpx 0rpx rgba(56,62,68,0.08);
+    border-radius:10rpx;
+    border:1rpx solid rgba(237,237,237,1);
+    margin: 30rpx 25rpx 30rpx;
+    padding: 34rpx;
+  }
+  
+.grade {
+    margin: 15rpx 0;
+}
+
+.flag {
+    height: 40rpx;
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(204, 204, 204, 1);
+    line-height: 40prx;
+    margin-right: 30rpx;
+}
+
+.flag-text {
+    height: 40rpx;
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 40rpx;
+}
+.grade-btn{
+    display: flex;
+    justify-content: space-around;
+    padding: 30rpx 0 0;
+    border-top: 2rpx solid #F5F5F5;
+    margin-top: 20rpx;
+}
+.btn{
+    width: 50%;
+    height: 44rpx;
+    line-height: 44rpx;
+    padding: 22rpx 0;
+    text-align: center;
+    font-size:28rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    background:#fff;
+}
+.y{
+    background:linear-gradient(316deg,rgba(241,195,66,1) 0%,rgba(255,227,94,1) 100%);
+    border-radius:50rpx; 
+    color: #fff;
+}
+
+
+/* 请假通知 */
+.leave-flag{
+height:42rpx;
+font-size:28rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(51,51,51,1);
+line-height:42rpx;
+margin-bottom: 15rpx;
+padding-left: 35rpx;
+position: relative;
+}
+.red-cicrle::before{
+    content: '';
+    position: absolute;
+    top: 10rpx;
+    left: 0;
+    width: 20rpx;
+    height: 20rpx;
+    border-radius:100%;
+    background:linear-gradient(316deg,rgba(241,66,66,1) 0%,rgba(255,149,94,1) 100%);
+
+}
+.blue-cicrle::before{
+    content: '';
+    position: absolute;
+    top: 10rpx;
+    left: 0;
+    width: 20rpx;
+    height: 20rpx;
+    border-radius:100%;
+    background:linear-gradient(316deg,rgba(72,149,255,1) 0%,rgba(72,170,255,1) 100%);
+}
+.leave{
+    margin-bottom: 15rpx;
+}
+.leave-time{
+
+height:40rpx;
+font-size:28rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(204,204,204,1);
+line-height:40rpx;
+}
+/* 
+代课记录 */
+.record-list {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(56, 62, 68, 0.08);
+    border-radius: 10rpx;
+    border: 1rpx solid rgba(237, 237, 237, 1);
+    margin: 30rpx 25rpx;
+    padding: 34rpx;
+}
+
+.teacher {
+    margin: 15rpx 0;
+}
+
+.flag {
+    height: 40rpx;
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(204, 204, 204, 1);
+    line-height: 40prx;
+    margin-right: 30rpx;
+}
+
+.flag-text {
+    height: 40rpx;
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 40rpx;
+}

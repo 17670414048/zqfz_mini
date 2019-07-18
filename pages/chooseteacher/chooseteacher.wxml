@@ -1,0 +1,29 @@
+<!--pages/chooseteacher/chooseteacher.wxml-->
+    <import src="../template/head.wxml"></import>
+    <wxs src="../../utils/formateDate.wxs" module="tutil"/>
+<view class="wraper">
+    <!-- <block bindtap="clickTemp"> -->
+        <template is="head" data="{{title}}"></template>
+    <!-- </block> -->
+      <view class="mtop">
+        <view class="info">
+            <view class="info-course">
+               {{source.course_name}}（{{source.teacher_name}}老师）
+            </view>
+            <view class="info-time">{{tutil.formatDayTime(source.start_time*1000, '.')}}-{{tutil.formatTime(source.end_time*1000)}}</view>
+        </view>
+    </view>
+    <view class="tcenter">
+        <view class="teacher-title">选择代课老师</view>
+        <view class="teacher-list"  wx:if="{{radio.length}}">
+            <view class="radio-list" wx:for="{{radio}}" wx:key="{{item.id}}" bindtap="radioSelect" data-id="{{item.id}}">
+                <image src="{{selected == item.id?'../../images/radio-checked.png':'../../images/radio-check.png'}}" class="radio-img"/>
+                <text class="radio-text">{{item.name}}</text>
+            </view>
+        </view>
+        <view class="no-info" wx:else>暂无可选代课老师</view>
+    </view>
+     <view class="mfooter {{selected>0?'yellow':'gray'}}" bindtap="commit">
+        <text>确认修改 代课老师</text><image src="../../images/back.png" class="right-back"/>
+    </view>
+</view>

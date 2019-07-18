@@ -1,0 +1,33 @@
+<!-- pages/concatclass/concatclass.wxml -->
+<!-- <text>pages/concatclass/concatclass.wxml</text> -->
+<!-- pages/chooseteacher/chooseteacher.wxml -->
+<import src="../template/head.wxml"></import>
+<wxs src="../../utils/formateDate.wxs" module="tutil" />
+<view class="wraper">
+    <!-- <block bindtap="clickTemp"> -->
+    <template is="head" data="{{title}}"></template>
+    <!-- </block> -->
+    <!-- <view class="mtop">
+        <view class="info">
+            <view class="info-time">合并到</view>
+            <view class="info-course">新体能训练课（王老师）</view>
+            <view class="info-time">2019.04.05 10：00-12：00</view>
+        </view>
+    </view> -->
+    <view class="tcenter">
+        <view class="teacher-title">选择目标课程</view>
+        <view class="teacher-list">
+            <view class="radio-list" wx:for="{{list}}" wx:key="{{item.id}}" bindtap="radioSelect" data-id="{{item.id}}" data-index="{{index}}">
+                <view class="radio-text">
+                    <view class="info-course">{{item.course_name}}</view>
+                    <view class="info-time">{{tutil.formatDayTime(item.start_time * 1000)}}-{{tutil.formatTime(item.end_time*1000)}}</view>
+                </view>
+                <image class="radio-img" src="{{item.id == target_id?'../../images/selected.png':'../../images/select1.png'}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="mfooter yellow" bindtap="commit">
+        <text>确认合并</text>
+        <image src="../../images/back.png" class="right-back" />
+    </view>
+</view>

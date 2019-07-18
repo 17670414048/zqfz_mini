@@ -1,0 +1,55 @@
+.switchBox{
+    width:136rpx;
+    height:68rpx;
+    overflow:hidden;
+    border-radius: 34rpx;
+    background-color: #6B520D;
+}
+
+.switch{
+    width:50rpx;
+    height:50rpx;
+    background-color:#fff;
+    border-radius: 50%;
+    
+}
+
+.switch::after{
+   
+}
+
+.toggle-on {
+    position: relative;
+    top:9rpx;
+    left:9rpx;
+    transition: left 0.3s ease-out;
+}
+
+.toggle-on::after{
+    content: "我的";
+    width: 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    display:block;
+    font-size:25rpx;
+    position: relative;
+    left: 59rpx;
+}
+
+.toggle-off{
+    position: relative;
+    top:9rpx;
+    left: 77rpx;
+    transition: left 0.3s ease-out;
+}
+
+.toggle-off::before{
+    content: "全部";
+    width: 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    display:block;
+    font-size:25rpx;
+    position: relative;
+    right: 59rpx;
+}

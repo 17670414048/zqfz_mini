@@ -1,0 +1,104 @@
+/* pages/mine/mine.wxss */
+
+.my-time {
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    background: linear-gradient(316deg, rgba(241, 195, 66, 1) 0%, rgba(255, 227, 94, 1) 100%);
+    box-shadow: 0px 4px 8px 0px rgba(155, 170, 194, 0.09);
+    font-size: 40rpx;
+    font-family:PingFangSC;
+    color:rgba(255,255,255,1);
+    padding-left: 30rpx;
+    position: relative;
+}
+.my-time .right-text{
+    float: right;
+    font-size: 30rpx;
+    padding-right: 80rpx;
+    color: #000;
+}
+.main-first {
+    padding: 0 20rpx;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.grad {
+    padding: 35rpx 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.after::after {
+    content: "";
+    position: absolute;
+    top: 35rpx;
+    right: 0;
+    height: 80rpx;
+    width: 2rpx;
+    background: #CCCCCC;
+}
+
+.number {
+    height: 58rpx;
+    font-size: 60rpx;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(74, 74, 74, 1);
+    line-height: 52rpx;
+    margin-bottom: 10rpx;
+    position: relative;
+}
+
+.text {
+    height: 50rpx;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(150, 150, 150, 1);
+    line-height: 52rpx;
+}
+.reddot1{
+    position: absolute;
+    top: -25rpx;
+    text-align:center;
+}
+.main-second{
+    margin: 30rpx auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+  }
+  .grad1{
+      text-align: center;
+      margin-top: 20rpx;
+      padding: 20rpx 37rpx;
+      position: relative;
+      align-self: flex-start;
+      margin-left: 3rpx;
+  }
+  .grad1-img{
+      width: 72rpx;
+      height: 74rpx;
+      margin-bottom: 10rpx;
+  }
+  .grad1 view{
+    height:50rpx;
+    font-size:28rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(150,150,150,1);
+    line-height:52rpx;
+  }
+  .reddot2{
+    position: absolute;
+    top: -2rpx;
+    text-align:center;
+    right: 40rpx;
+}

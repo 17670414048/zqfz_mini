@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/mine/mine",
+    "pages/mytimetable/mytimetable",
+    
+    "pages/myrecord/myrecord",
+    "pages/concatclass/concatclass",
+    "pages/date/date",
+    "pages/studentpayment/studentpayment",
+    "pages/record/record",
+    "pages/chooseteacher/chooseteacher",
+    "pages/mycoursecallname/mycoursecallname",
+    "pages/success/success",
+    "pages/calendar/calendar",
+    "pages/index/index", 
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "儿童早期发展",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

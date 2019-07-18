@@ -1,0 +1,92 @@
+/* pages/chooseteacher/chooseteacher.wxss */
+
+page {
+    background: #F9F9FA;
+}
+
+.wraper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.mtop {
+    flex: 0 0 100rpx;
+    margin-bottom: 30rpx;
+}
+
+.info {
+    background: #fff;
+    padding: 30rpx 40rpx;
+}
+
+.info-course {
+    height: 64rpx;
+    font-size: 34rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(74, 74, 74, 1);
+    line-height: 64rpx;
+}
+
+.info-time {
+    height: 34rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(150, 150, 150, 1);
+    line-height: 34rpx;
+    margin-bottom: 20rpx;
+}
+
+.tcenter {
+    flex: 1;
+    position: relative;
+    padding: 20rpx 40rpx;
+}
+
+.teacher-title {
+    height: 56rpx;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(150, 150, 150, 1);
+    line-height: 56rpx;
+}
+.teacher-list{
+background:rgba(255,255,255,1);
+border-radius:16rpx;
+border:2rpx solid rgba(217,217,217,1);
+margin-top: 20rpx;
+}
+.radio-list{
+    padding: 30rpx;
+    border-bottom: 2rpx solid #F5F5F5;
+    display: flex;
+    justify-content: flex-start;
+
+}
+.radio-img{
+    width: 42rpx;
+    height: 42rpx;
+    margin: 0 20rpx;
+}
+.radio-text{
+font-size:32rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(74,74,74,1);
+
+}
+
+
+.yellow {
+    background: linear-gradient(314deg, rgba(241, 195, 66, 1) 0%, rgba(255, 227, 94, 1) 100%);
+    box-shadow: 0px 2px 4px 0px rgba(155, 170, 194, 0.09);
+}
+
+.gray {
+    background: rgba(194, 197, 201, 1);
+    box-shadow: 0px 4px 8px 0px rgba(155, 170, 194, 0.09);
+}

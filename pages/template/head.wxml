@@ -1,0 +1,10 @@
+<template name="head">
+<view style="flex:0 0 100rpx;">
+        <view class="nav-header">
+            <view class="nav-title">{{title}}  <view hidden="{{!notice}}"  class="notice">{{notice}}</view></view>
+            <!-- <image class="icon-back" src="../../images/back.png" bindtap="back" /> -->
+          
+        </view>
+        <!-- <view class="line-yellow"></view> -->
+    </view>
+    </template>

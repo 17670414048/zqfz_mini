@@ -1,0 +1,4 @@
+<view class="switchBox">
+  <view class="switch {{dataItem.isOn ? 'toggle-on' : 'toggle-off'}}" style="background-color: dataItem.color || '#09bb07'" bindtap="tapSwitch">
+  </view>
+</view>

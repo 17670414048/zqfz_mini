@@ -1,0 +1,109 @@
+<wsx src="../../utils/formateDate.wxs" module="tutil" />
+<view class='wraper'>
+  <block wx:if="{{isTime}}">
+    <view class='header'>
+      <view class="header-f {{ifCalendarswiper===1?'calendarswiper':''}}">
+        <!-- <view class="time-left" catch:tap="change"> -->
+        <view class="time-left">
+          <!-- <text class="header-time">{{times}}</text> -->
+          <view class="">
+            <calendarswiper calendar="{{calendar}}" gesture="{{gesture}}" id="calendarswiper" class="" bindifCalendarswiper="ifCalendarswiper"></calendarswiper>
+          </view>
+        </view>
+      </view>
+      <view>
+        <image class="icon" bindtap='switchMonthView' src='../../images/more.png'></image>
+      </view>
+      <view class="time-right">
+        <!-- <image class="img" src="{{isAll?'../../images/icon_left_copy.png':'../../images/more-flag.png'}}" catch:tap="switch"></image> -->
+        <switchItem dataItem="{{switch}}" bindmyevent="tagSwitch"></switchItem>
+      </view>
+      <!-- <view class="header-s">
+                <swiper class="swiper" duration="{{duration}}" current="{{currentItemId}}" current-item-id="{{currentItemId}}" bindchange="swiperChange">
+                    <block wx:for="{{list}}" wx:key="index">
+                        <swiper-item class="item" item-id="{{index}}" data-item-id="{{index}}" bindtap='clickChange'>
+                            <view class='li'>
+                                <view class='li1 scroll-list {{currentItemId == index ? "active" : ""}}'>
+                                    <text class="scroll-list-week">{{item.eg}}</text>
+                                    <view class="scroll-list-day">{{item.day}}</view>
+                                </view>
+                            </view>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view> -->
+    </view>
+  </block>
+  <block>
+    <!-- <calendarswiper calendar="{{calendar}}" gesture="{{gesture}}" bind:swiperChoose="swiperChoose" bind:changeYearAndMonth="changeYearAndMonth" id="calendarswiper"></calendarswiper> -->
+    <!-- <calendarswiper calendar="{{calendar}}" gesture="{{gesture}}" id="calendarswiper"></calendarswiper> -->
+    <!-- <icon class="icon {{isTime?'icon-down':'icon-up'}}"></icon> -->
+  </block>
+  <!-- <block wx:if="{{!isTime}}">
+    <calendar dateTime="{{calenderTime}}" showCaldenlar="{{!isTime}}" bind:changes="changes"></calendar>
+  </block> -->
+  <view class='main'>
+    <scroll-view class='main-scroll' scroll-y style="height: 100%">
+      <block wx:if="{{!isAll}}">
+        <view class='main-list'>
+          <view class="times" wx:for="{{timeList}}" wx:for-index="index" wx:key="{{index}}">
+            <view class="times-left">{{item}}</view>
+            <view class="times-right">
+              <!-- <view class="card-list"> -->
+              <view wx:if="{{courseList[index].length}}" class="card color-border-bottom{{index%4}} {{selected===index?'card-active'+index%4:''}}" data-index="{{index}}" data-idx="{{courseList[index][0].id}}" bindtap="select">
+                <view wx:if="{{courseList[index].length}}" class='card-box'>
+                  <view class='card-content time color{{index%4}}'>{{courseList[index][0].time_desc}}
+                    <i wx:if="{{courseList[index][0].status_desc}}">{{courseList[index][0].status_desc}}</i>
+                  </view>
+                  <view class='card-content course'>{{courseList[index][0].course_name}}</view>
+                  <view class='card-content info'>共{{courseList[index][0].total_baby}}人（已请假{{courseList[index][0].leave_count}}人）</view>
+                </view>
+              </view>
+              <!-- </view> -->
+            </view>
+          </view>
+
+        </view>
+      </block>
+      <block wx:else>
+        <view class='main-list'>
+          <view class="times1" wx:for="{{timeList}}" wx:key="{{index}}">
+            <view class="times-left">{{item}}</view>
+            <view class="times-right">
+              <view class="card1">
+                <view wx:if="{{courseList[index].length}}" class="card-box1 color-border-left{{index1%4}}  {{courseList[index][index1].selected?'card-actives'+index1%4:''}}" wx:for="{{courseList[index]}}" wx:for-index="index1" wx:key="{{item.id}}" data-idx="{{item.id}}"
+                  data-index="{{index1}}" data-index0="{{index}}" data-item="{{item}}" bindtap="selects">
+                  <view class='card-content course'>{{item.course_name}}
+                    <i wx:if="{{item.status_desc}}">({{item.status_desc}})</i>
+                  </view>
+                  <view class='card-content info'>{{item.teacher_name}}老师</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <block wx:if="{{!isAll}}">
+    <view class="footer {{isBottom?'yellow':'gray'}}">
+      <view class="up {{isBottom?'show-footer':'hide-footer'}}">
+        <view class="f" bindtap="stopcurse" data-isBottom="{{isBottom}}">停课</view>
+        <view class="f" bindtap="callname" data-isBottom="{{isBottom}}">点名</view>
+        <view class="f" bindtap="absentclass" data-isBottom="{{isBottom}}">代课</view>
+      </view>
+      <view class="down {{isBottom?'show-footer':'hide-footer'}}" >
+        <view class='footer-bar'></view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="mfooter {{concat.length>0?'yellow':'gray'}}" bindtap="goselect">
+      <text class="text">已选择{{concat.length}}节 去合并</text>
+      <image src="../../images/time-right.png" class="right-back1" />
+    </view>
+  </block>
+</view>
+<view bindtap="gomine"  hover-class="other-navigator-hover">
+  <view class="my"></view>
+</view>

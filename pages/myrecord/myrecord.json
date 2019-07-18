@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "calendar": "../../pages/calendar/calendar",
+    "calendarswiper": "../../components/calendarswiper/index"
+  }
+}
